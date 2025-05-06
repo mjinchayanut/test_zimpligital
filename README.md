@@ -1,16 +1,60 @@
-# test_zimpligital
+# แอปพลิเคชันรายการเพลง (Music Playlist App)
 
-A new Flutter project.
+แอปพลิเคชันรายการเพลงอย่างง่ายที่สร้างด้วย Flutter แอปนี้ช่วยให้ผู้ใช้สามารถเลือกดูรายการเพลงต่างๆ ดูเพลงภายในแต่ละรายการ และเล่นตัวอย่างเพลงได้ ข้อมูลเพลงดึงมาจาก Deezer API
 
-## Getting Started
+## คุณสมบัติ
 
-This project is a starting point for a Flutter application.
+* แสดงรายการเพลง (Playlist) ที่จัดเตรียมไว้
+* ดูเพลงภายในแต่ละรายการเพลง
+* เล่นตัวอย่างสั้นๆ ของเพลง (Preview)
+* มี Mini-player เพื่อควบคุมการเล่นขณะเรียกดูรายการเพลง
+* หน้า Now Playing แบบเต็มหน้าจอพร้อมการควบคุมการเล่น
 
-A few resources to get you started if this is your first Flutter project:
+## เทคโนโลยีที่ใช้
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* **Flutter:** UI Toolkit สำหรับสร้างแอปพลิเคชันที่คอมไพล์เป็นโค้ด Native ได้สำหรับอุปกรณ์เคลื่อนที่ เว็บ และเดสก์ท็อปจากโค้ดเบสเดียว
+* **just_audio:** ไลบรารีสำหรับเล่นไฟล์เสียงที่ครบครันสำหรับ Flutter
+* **sliding_up_panel:** แพ็กเกจ Flutter สำหรับสร้างพาเนลที่เลื่อนขึ้นได้
+* **http:** แพ็กเกจยอดนิยมสำหรับทำ HTTP Request
+* **Deezer API:** ใช้สำหรับดึงข้อมูลเพลงและ URL ตัวอย่างเพลง (Preview URL)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## โครงสร้างโปรเจกต์
+
+├── lib/
+│   ├── main.dart             # จุดเริ่มต้นของแอปพลิเคชัน
+│   ├── model/
+│   │   ├── playlist.dart     # โมเดลข้อมูลสำหรับ Playlist
+│   │   └── song.dart         # โมเดลข้อมูลสำหรับ Song
+│   ├── pages/
+│   │   ├── home_page.dart      # แสดงรายการเพลงทั้งหมด
+│   │   └── now_playing_page.dart # แสดงเพลงที่กำลังเล่นอยู่และรายการเพลง
+│   └── services/
+│       └── api_service.dart  # จัดการการดึงข้อมูลจาก Deezer API
+└── README.md
+
+## เริ่มต้นใช้งาน
+### ข้อกำหนดเบื้องต้น
+
+* ติดตั้ง Flutter SDK แล้ว
+* อุปกรณ์มือถือหรือ Emulator สำหรับรันแอป
+
+### การติดตั้ง
+1.  โคลน Repository:
+
+    ```bash
+    git clone <https://github.com/mjinchayanut/test_zimpligital.git>
+    cd music_playlist_app
+    ```
+
+2.  ติดตั้ง Dependencies ของโปรเจกต์:
+
+    ```bash
+    flutter pub get
+    ```
+
+### การรันแอป
+
+เชื่อมต่ออุปกรณ์หรือเริ่ม Emulator จากนั้นรันแอปด้วยคำสั่ง:
+
+```bash
+flutter run
